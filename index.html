@@ -1,40 +1,791 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="./style-template.css" rel="stylesheet">
     <title>
-        stack-devel    </title>
+        stack-devel </title>
 
 <body class="home">
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	<div class="container-fluid">
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryNav" aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#primaryNav"
+                aria-controls="primaryNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-		<div class="collapse navbar-collapse" id="primaryNav">
-			<ul id="menu-gnb" class="navbar-nav me-auto"><li  id="menu-item-15" class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item nav-item-15"><a href="https://platanus.org/stack-devel/category/%eb%af%b8-%eb%b6%84%eb%a5%98" class="nav-link">미분류</a></li>
-</ul>			<form class="form-inline" id="searchform" role="search" method="get" action="https://platanus.org/stack-devel/">
-    <div class="input-group">
-        <input class="form-control" id="s" name="s" type="text" placeholder="Search">
-        <button class="btn btn-outline-success" type="submit">
-            Search        </button>
+            <div class="collapse navbar-collapse" id="primaryNav">
+                <ul id="menu-gnb" class="navbar-nav me-auto">
+                    <li id="menu-item-15"
+                        class="menu-item menu-item-type-taxonomy menu-item-object-category nav-item nav-item-15"><a
+                            href="https://platanus.org/stack-devel/category/%eb%af%b8-%eb%b6%84%eb%a5%98"
+                            class="nav-link">미분류</a></li>
+                </ul>
+                <form class="form-inline" id="searchform" role="search" method="get"
+                    action="https://platanus.org/stack-devel/">
+                    <div class="input-group">
+                        <input class="form-control" id="s" name="s" type="text" placeholder="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            Search </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="row content" id="body-row">
+
+        <div id="sidebar-container" class="sidebar-expanded d-none d-md-block col-2">
+            <!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
+            <!-- Bootstrap List Group -->
+            <ul class="list-group sticky-top sticky-offset">
+                <!-- Separator with title -->
+                <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                    <small>MAIN MENU</small>
+                </li>
+                <!-- /END Separator -->
+                <!-- Menu with submenu -->
+                <a href="#submenu1" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-dashboard fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Dashboard</span>
+                        <span class="submenu-icon ml-auto"></span>
+                    </div>
+                </a>
+                <!-- Submenu content -->
+                <div id="submenu1" class="collapse sidebar-submenu">
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Charts</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Reports</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Tables</span>
+                    </a>
+                </div>
+                <a href="#submenu2" data-toggle="collapse" aria-expanded="false"
+                    class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-user fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Profile</span>
+                        <span class="submenu-icon ml-auto"></span>
+                    </div>
+                </a>
+                <!-- Submenu content -->
+                <div id="submenu2" class="collapse sidebar-submenu">
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Settings</span>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
+                        <span class="menu-collapsed">Password</span>
+                    </a>
+                </div>
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-tasks fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Tasks</span>
+                    </div>
+                </a>
+                <!-- Separator with title -->
+                <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
+                    <small>OPTIONS</small>
+                </li>
+                <!-- /END Separator -->
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-calendar fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Calendar</span>
+                    </div>
+                </a>
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-envelope-o fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Messages <span
+                                class="badge badge-pill badge-primary ml-2">5</span></span>
+                    </div>
+                </a>
+                <!-- Separator without title -->
+                <li class="list-group-item sidebar-separator menu-collapsed"></li>
+                <!-- /END Separator -->
+                <a href="#" class="bg-dark list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span class="fa fa-question fa-fw mr-3"></span>
+                        <span class="menu-collapsed">Help</span>
+                    </div>
+                </a>
+                <a href="#" data-toggle="sidebar-colapse"
+                    class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
+                    <div class="d-flex w-100 justify-content-start align-items-center">
+                        <span id="collapse-icon" class="fa fa-2x mr-3"></span>
+                        <span id="collapse-text" class="menu-collapsed">Collapse</span>
+                    </div>
+                </a>
+                <!-- Logo -->
+                <li class="list-group-item logo-separator d-flex justify-content-center">
+                    <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30"
+                        height="30">
+                </li>
+            </ul>
+            <!-- List Group END-->
+        </div>
+        <!-- sidebar-container END -->
+        <div class="col py-3">
+
+            <h2>
+                Spring5; AOP </h2>
+            <time datetime="2021-02-13" pubdate="">
+                2021년 02월 13일 3:01 오전 </time>
+            <span><span class="screen-reader-text">Spring5; AOP</span>의 댓글을 껐습니다</span>
+            <h1>스프링 AOP의 실제 #1</h1>
+
+
+
+            <ul>
+                <li>스프링에서 프록시 패턴을 어떻게 적용시키는지 실제로 스프링을 통해 적용해본다.</li>
+                <li><code>proxy 패턴</code>은 <code>decorator 객체</code> 로도 활용할 수 있다. 기능 추가와 확장에 초점이 맞춰져있다.</li>
+            </ul>
+
+
+
+            <h2>짤막한 프록시의 핵심</h2>
+
+
+
+            <ul>
+                <li>프록시의 특징은 핵심 기능은 구현하지 않는다는 점이다.</li>
+                <li>프록시는 핵심 기능을 구현하지 않는 대신 여러 객체에 공통으로 적용할 수 있는 기능을 구현한다.</li>
+                <li>AOP의 기본 핵심은 <strong>공통 기능을 삽입하는 것</strong> 이다.</li>
+            </ul>
+
+
+
+            <h2>AOP의 주요 용어</h2>
+
+
+
+            <h3>1. Advice</h3>
+
+
+
+            <ul>
+                <li>공통 관심 기능을 핵심 로직에 적용하는 시점을 정의한다.</li>
+                <li>ex) <strong>메소드를 호출하기 전</strong>에 <strong>트랜잭션을 시작</strong>하는 기능을 적용한다.</li>
+            </ul>
+
+
+
+            <h3>2. Joinpoint</h3>
+
+
+
+            <ul>
+                <li>Advice를 <strong>적용하는 지점</strong>을 의미한다.</li>
+                <li>메소드 호출, 필드 값 변경 등을 포함한다.</li>
+                <li>스프링은 메소드 호출에 대한 Joinpoint만 지원.</li>
+            </ul>
+
+
+
+            <h3>3. Pointcut</h3>
+
+
+
+            <ul>
+                <li>Advice가 <strong>실제 적용되는 Joinpoint</strong>를 의미한다.</li>
+                <li>스프링에서는 정규표현식이나 AspectJ의 문법을 이용해 Poincut을 정의한다.</li>
+            </ul>
+
+
+
+            <h3>4. Weaving</h3>
+
+
+
+            <ul>
+                <li>Advice를 핵심 <strong>로직 코드에 적용하는 행위</strong>.</li>
+            </ul>
+
+
+
+            <h3>5. Aspect</h3>
+
+
+
+            <ul>
+                <li>여러 객체에 공통으로 적용되는 기능을 Aspect라고 한다.</li>
+            </ul>
+
+
+
+            <h2>Aspect의 종류</h2>
+
+
+
+            <ul>
+                <li>스프링에서 구현 가능한 Aspect의 종류</li>
+            </ul>
+
+
+
+            <ol>
+                <li>Before Advice : <strong>메소드 호출 전</strong> Aspect를 실행한다.</li>
+                <li>After Returning Advice : <strong>메소드가</strong> Exception 없이 <strong>실행 된 이후</strong> Aspect를 실행한다.
+                </li>
+                <li>After Throwing Advice : <strong>메소드가 Exception 이 발생한 경우</strong> Aspect를 실행한다.</li>
+                <li>After Advice : <strong>Exception 상관 없이</strong> 메소드 실행 후 Aspect를 실행한다.</li>
+                <li>📌 <strong>Around Advice</strong> : 메소드 실행 전, 후, Exception 발생 시점에 Aspect를 실행한다.</li>
+            </ol>
+
+
+
+            <blockquote class="wp-block-quote">
+                <p>이 중에서 가장 많이 사용되는것은 <strong>Around Advice</strong> 방식인데, 시점을 다양하게 사용할 수 있기 때문이다.</p>
+            </blockquote>
+
+
+
+            <h2>스프링의 AOP구현</h2>
+
+
+
+            <ul>
+                <li>프록시를 <strong>적용할 클래스</strong>에 @Aspect 어노테이션을 붙인다.</li>
+                <li>@Pointcut 어노테이션으로 <strong>Joinpoint 를 지정</strong>한다.</li>
+                <li><strong>공통 기능을 구현한 메소드</strong>에 @Around 어노테이션을 지정한다.</li>
+            </ul>
+
+
+
+            <h3>1. @Aspect, @Pointcut, @Around를 이용한 AOP 구현</h3>
+
+
+
+            <ul>
+                <li><a
+                        href="https://git.canxan.com/platanus/java-spring-study/-/commit/9f8f8d9b165b01bf58537fe6ecedcde450b0b20a">스프링AOP
+                        적용 하기 이전 프록시 패턴 코드</a>
+                    <ul>
+                        <li>코드의 요점은 <code>ExecutiveTimeCacluator</code>클래스의 생성자에서 구현체를 위임(delegate) 받아 프록시를 구현한다는 점이다.
+                        </li>
+                    </ul>
+                </li>
+                <li>다음은 기존 코드에 어노테이션을 적용했다</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code  language-java"><code class="  language-java" lang="java"><span class="token annotation punctuation">@Aspect</span>
+        <span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ExecutiveTimeAspect</span> <span class="token punctuation">{</span>
+        
+        <span class="token annotation punctuation">@Pointcut</span><span class="token punctuation">(</span><span class="token string">"execution(public * chap07..*(..))"</span><span class="token punctuation">)</span>
+        <span class="token keyword">private</span> <span class="token keyword">void</span> <span class="token function">publicTarget</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token punctuation">}</span>
+        
+        <span class="token annotation punctuation">@Around</span><span class="token punctuation">(</span><span class="token string">"publicTarget()"</span><span class="token punctuation">)</span>
+        <span class="token keyword">public</span> <span class="token class-name">Object</span> <span class="token function">measure</span><span class="token punctuation">(</span><span class="token class-name">ProceedingJoinPoint</span> joinPoint<span class="token punctuation">)</span> <span class="token keyword">throws</span> <span class="token class-name">Throwable</span> <span class="token punctuation">{</span>
+            <span class="token keyword">long</span> start <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">nanoTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">try</span> <span class="token punctuation">{</span>
+                <span class="token class-name">Object</span> result <span class="token operator">=</span> joinPoint<span class="token punctuation">.</span><span class="token function">proceed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">finally</span> <span class="token punctuation">{</span>
+                <span class="token keyword">long</span> finish <span class="token operator">=</span> <span class="token class-name">System</span><span class="token punctuation">.</span><span class="token function">nanoTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">Signature</span> signature <span class="token operator">=</span> joinPoint<span class="token punctuation">.</span><span class="token function">getSignature</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"%s.%s(%s) runtime : %s ns\n"</span><span class="token punctuation">,</span>
+                    joinPoint<span class="token punctuation">.</span><span class="token function">getTarget</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getSimpleName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    signature<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token class-name">Arrays</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>joinPoint<span class="token punctuation">.</span><span class="token function">getArgs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+                    <span class="token punctuation">(</span>finish <span class="token operator">-</span> start<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span></code></pre>
+
+
+
+            <ul>
+                <li>@Aspect 어노테이션을 적용한 클래스는 Advice(@Around)와 Pointcut을 제공한다.</li>
+                <li>@Pointcut 어노테이션은 <strong>공통 기능을 적용할 대상을 지정</strong>한다.</li>
+                <li>@Around 어노테이션은 <code>publicTarget()</code>의 pointcut에 공통 기능을 적용한다는 의미다.<ul>
+                        <li>measure()의 <code>ProceedingJoinPoint</code> 타입 파마리터는 <strong>프록시 대상 객체의 메소드를 호출할 때
+                                사용</strong>한다.
+                        </li>
+                        <li><code>joinPoint.proceed()</code> 메소드를 호출하면 대상 객체의 메소드가 실행되므로 이 코드 이전과 이후에 공통 기능을 위한 코드를
+                            위치시키면 된다.
+                            (기존 코드의 delegate 위치와 같다)</li>
+                    </ul>
+                </li>
+            </ul>
+
+
+
+            <h4>Bean설정</h4>
+
+
+
+            <pre class="wp-block-code"><code class="">@Configuration
+        @EnableAspectJAutoProxy
+        public class AppContext {
+        
+        @Bean
+        public ExecutiveTimeAspect executiveTimeAspect() {
+            return new ExecutiveTimeAspect();
+        }
+        
+        @Bean
+        public Calculator calculator() {
+            return new ReCalculator();
+        }
+        }</code></pre>
+
+
+
+            <ul>
+                <li>@EnableAspectJAutoProxy 어노테이션을 bean 설정에 붙이면, @Aspect 클래스를 공통 기능으로 사용할 수 있다.</li>
+                <li>스프링은 @Aspect 어노테이션이 붙은 bean 객체를 찾아 @Pointcut 설정과 @Around 설정을 사용한다.</li>
+            </ul>
+
+
+
+            <h4>스프링 컨테이너</h4>
+
+
+
+            <pre class="wp-block-code"><code class="">public class MainAspect {
+        
+        public static void main(String[] args) {
+        
+            AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
+                AppContext.class);
+        
+            Calculator calculator = context.getBean("calculator", Calculator.class);
+            long fiveFactorial = calculator.factorial(5);
+            System.out.println("calculator.factorial(5) = " + fiveFactorial);
+            System.out.println(calculator.getClass().getName());
+            context.close();
+        }</code></pre>
+
+
+
+            <ul>
+                <li>아래는 실행 결과다</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">ReCalculator.factorial([5]) runtime : 22574 ns
+        calculator.factorial(5) = 120
+        com.sun.proxy.$Proxy17</code></pre>
+
+
+
+            <ul>
+                <li>첫번째 줄은 <code>ExecutiveCalculatorAspect</code>클래스의 <code>measure()</code>가 출력한 것이다.</li>
+                <li>세번째 줄은 <code>MainAspect</code>의 main에서 <code>getName()</code>을 출력한 것이다.</li>
+                <li>아래와 같은 실행 구조를 가진다.<br><img src=":/a09904f7c47d409caecb92b6602187fa"
+                        alt="f14cee07d5337be2cecc716a333c92ab.png"></li>
+                <li>여기서 AOP를 적용하지 않으면 <code>$Proxy17</code> 대신 <code>ReCalculator</code>를 반환한다. (ExecutiveTimeAspect
+                    bean설정
+                    주석처리)</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">calculator.factorial(5) = 120
+        chap07.ReCalculator</code></pre>
+
+
+
+            <h3>ProceedingJoinPoint의 메소드</h3>
+
+
+
+            <ul>
+                <li>Around Advice 방식에서 사용할 공통 기능 메소드는 대부분 파라미터로 전달받은 <code>ProceedingJoinPoint</code>의
+                    <code>proceed()</code>메소드만 호출하면 된다.
+                </li>
+            </ul>
+
+
+
+            <h4><code>ProceedingJoinPoint</code> 인터페이스에서 제공하는 메소드</h4>
+
+
+
+            <ul>
+                <li><code>Signature getSignature()</code>: 호출 되는 메소드에 대한 정보를 구한다.</li>
+                <li><code>Object getTarget()</code>: 대상 객체를 구한다.</li>
+                <li><code>Object[] getArgs()</code>: 파라미터 목록을 구한다.</li>
+            </ul>
+
+
+
+            <h4><code>org.aspectj.lang.Signature</code> 인터페이스에서 제공하는 메소드</h4>
+
+
+
+            <ul>
+                <li><code>String getName()</code>: 호출되는 메소드의 이름을 구한다.</li>
+                <li><code>String toLongString()</code>: 호출되는 메소드의 모든 정보를 구한다.</li>
+                <li><code>String toShortString()</code>: 호출되는 메소드를 축약한다 (이름만)</li>
+            </ul>
+
+
+
+            <h2>스프링에서 프록시를 생성할 때</h2>
+
+
+
+            <ul>
+                <li>스프링에서 에서 다음과 같이 ReCalculator를 사용한다.</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">// 스프링 컨테이너
+        Calculator calculator = context.getBean("calculator", Calculator.class);
+        
+        // bean  설정
+        @Bean
+        public Calculator calculator() {
+        return new ReCalculator();
+        }</code></pre>
+
+
+
+            <ul>
+                <li><code>ReCalculator</code>를 사용하는데 <code>Calculator</code> 타입을 사용한다. 이것을 ReCalculator를 사용하도록 바꾸면
+                    Expection이
+                    발생한다.</li>
+                <li>이유는 런타임에 생성한 프록시 객체인 <code>$Proxy17</code>도 <code>ReCalculator</code>구현체가 상속받는
+                    <code>Calculator</code>인터페이스를
+                    상속받기 때문이다.<br><img src=":/009f247e99e6488b9bb4ab4ee5dd46b8"
+                        alt="16c8ef3c565eb530d8521c769360c0de.png"></li>
+                <li>bean 객체가 인터페이스를 상속할 때 인터페이스가 아닌 구현체를 이용해서 프록시를 생성하고 싶다면 다음과 같이 하면된다.</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">// 스프링 컨테이너
+        AnnotationConfigApplicationContext context =
+        new AnnotationConfigApplicationContext(AppContext.class);
+        
+        ReCalculator calculator = context.getBean("calculator", ReCalculator.class);
+        
+        // bean 설정
+        @Configuration
+        @EnableAspectJAutoProxy(proxyTargetClass = true)
+        public class AppContext {
+        //...</code></pre>
+
+
+
+            <ul>
+                <li>아래는 실행 결과다</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">ReCalculator.factorial([5]) runtime : 15285343 ns
+        calculator.factorial(5) = 120
+        chap07.ReCalculator$$EnhancerBySpringCGLIB$$7bd3a4d7</code></pre>
+
+
+
+            <blockquote class="wp-block-quote">
+                <p>ReCalculator를 받는다.</p>
+            </blockquote>
+
+
+
+            <ul>
+                <li>다음엔 excution 필터와 Advice 적용 순서에 대해서 마저 정리하겠다.</li>
+            </ul>
+
+
+
+            <hr class="wp-block-separator is-style-dots">
+
+
+
+            <h1>스프링 AOP의 실제 #2</h1>
+
+
+
+            <h2>execution 패턴 표현식</h2>
+
+
+
+            <ul>
+                <li><code>execution(public void set*(..))</code> : 반환형이 void이고, 메소드 이름의 set으로 시작하고 인자가 0개 이상인 메소드를 호출한다.
+                </li>
+                <li><code>executation(* dto.*.*())</code> : dto 패키지 탕비에 속한 인자가 없는 모든 메소드를 호출한다.</li>
+                <li><code>executation(* dto..*.*(..))</code> : dto 패키지 및 하위 패키지에 있고 인자가 0개 이상인 메소드를 호출한다.</li>
+                <li><code>execution(Long dto.StudentRepository.getAge(..))</code> : 반환형이 Long인 StudentRepository 타입의
+                    getAge()
+                    메소드를 호출한다.</li>
+                <li><code>execution(* get*(*))</code> : 이름이 get으로 시작하고 인자가 1개인 메소드를 호출한다.</li>
+                <li><code>execution(* get*(*, *))</code> : 이름이 get으로 시작하고 인자가 2개인 메소드를 호출한다. Advice 적용 순서</li>
+                <li>하나의 pointcut에 여러 Advice를 적용할 수 있다.</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">// Aspect 지정 객체
+        @Aspect
+        public class CacheAspect {
+        
+        private Map&lt;Long, Object&gt; cache = new HashMap&lt;&gt;();
+        
+        @Pointcut("execution(public * chap07..*(long))")
+        public void cacheTarget() {
+        }
+        
+        @Around("cacheTarget()")
+        public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
+        
+            Long number = (Long) joinPoint.getArgs()[0];
+            if (cache.containsKey(number)) {
+                System.out.printf("CacheAspect: Get the item from Cache [%d]\n", number);
+                return cache.get(number);
+            }
+        
+            Object result = joinPoint.proceed();
+            cache.put(number, result);
+            System.out.printf("CacheAspect: Put the item in Cache [%d]\n", number);
+            return result;
+        }
+        
+        }</code></pre>
+
+
+
+            <ul>
+                <li>새로운 Aspect를 구현했다.</li>
+                <li>bean 설정에서 두개의 Aspect를 아래와 같이 추가할 수 있다.</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">@Configuration
+        @EnableAspectJAutoProxy
+        public class AppContextWithCache {
+        
+        @Bean
+        public CacheAspect cacheAspect() {
+            return new CacheAspect();
+        }
+        
+        @Bean
+        
+        public ExecutiveTimeAspect executiveTimeAspect() {
+            return new ExecutiveTimeAspect();
+        }
+        
+        @Bean
+        public Calculator calculator() {
+            return new RecurrenceCalculator();
+        }
+        }</code></pre>
+
+
+
+            <ul>
+                <li>스프링컨테이너는 아래와 같이 생성한다</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">public class MainAspectWithCache {
+        
+        public static void main(String[] args) {
+            AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(AppContextWithCache.class);
+        
+            Calculator calculator = context.getBean("calculator", Calculator.class);
+            calculator.factorial(7);
+            calculator.factorial(7);
+            calculator.factorial(3);
+            calculator.factorial(7);
+            calculator.factorial(7);
+            calculator.factorial(3);
+            calculator.factorial(5);
+            calculator.factorial(5);
+            calculator.factorial(5);
+            calculator.factorial(5);
+            context.close();
+        }
+        
+        }</code></pre>
+
+
+
+            <ul>
+                <li>실행 결과는 아래와 같다</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">RecurrenceCalculator.factorial([7]) runtime : 16534 ns
+        CacheAspect: Put the item in Cache [7]
+        CacheAspect: Get the item from Cache [7]
+        RecurrenceCalculator.factorial([3]) runtime : 6481 ns
+        CacheAspect: Put the item in Cache [3]
+        CacheAspect: Get the item from Cache [7]
+        CacheAspect: Get the item from Cache [7]
+        CacheAspect: Get the item from Cache [3]
+        RecurrenceCalculator.factorial([5]) runtime : 8021 ns
+        CacheAspect: Put the item in Cache [5]
+        CacheAspect: Get the item from Cache [5]
+        CacheAspect: Get the item from Cache [5]
+        CacheAspect: Get the item from Cache [5]</code></pre>
+
+
+
+            <blockquote class="wp-block-quote">
+                <p>캐시에 객체가 존재하면 계산을 하지 않고 캐시를 가지고 온다.</p>
+            </blockquote>
+
+
+
+            <ul>
+                <li>이렇게 Aspect의 실행순서를 알 수 있다</li>
+                <li>[CacheAspect] Proxy → [ExecutiveTimeAspect] Proxy → [RecurrenceCacluator] Instance</li>
+            </ul>
+
+
+
+            <h3>@Order</h3>
+
+
+
+            <ul>
+                <li>여러개의 Aspect를 지정한다고 항상 의도된대로 실행되는 것은 아니다.</li>
+                <li>순서 지정이 필요한 경우 Aspect가 지정된 클래스에 @Order 어노테이션을 지정하면된다.</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">@Aspect
+        @Order(2)
+        public class CacheAspect {
+        //..
+        
+        @Aspect
+        @Order(1)
+        public class ExecutiveTimeAspect {
+        //..</code></pre>
+
+
+
+            <ul>
+                <li>실행 결과는 Cache를 뒤에 타도록 달라진다</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">CacheAspect: Put the item in Cache [7]
+        RecurrenceCalculator.factorial([7]) runtime : 201529 ns
+        CacheAspect: Get the item from Cache [7]
+        RecurrenceCalculator.factorial([7]) runtime : 276267 ns
+        CacheAspect: Put the item in Cache [3]
+        //... 중략
+        CacheAspect: Get the item from Cache [5]
+        RecurrenceCalculator.factorial([5]) runtime : 99159 ns
+        CacheAspect: Get the item from Cache [5]
+        RecurrenceCalculator.factorial([5]) runtime : 85201 ns
+        CacheAspect: Get the item from Cache [5]
+        RecurrenceCalculator.factorial([5]) runtime : 88659 ns</code></pre>
+
+
+
+            <h3>@Pointcut의 재사용</h3>
+
+
+
+            <ul>
+                <li>CacheAspect와 ExecutiveTimeAspect를 구성하면서 @Pointcut 어노테이션의 필터를 사용해 대상을 지정하고있다.</li>
+                <li>둘다 같은 Joinpoint를 바라보고 있고 이것을 한쪽으로 합칠 수 있다.</li>
+                <li>아래에서는 CacheAspect에서 ExevuciteTimeAspect쪽의 Joinpoint를 바라보도록 만들어보겠다</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">// CacheAspect
+        
+        //    @Pointcut("execution(public * chap07..*(long))")
+        //    public void cacheTarget() {
+        //    }
+        @Around("ExecutiveTimeAspect.publicTarget()")
+        public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
+        //..
+        
+        // ExecutiveTimeAspect
+        @Pointcut(value = "execution(public * chap07..*(..))")
+        public void publicTarget() {
+        }
+        //..</code></pre>
+
+
+
+            <blockquote class="wp-block-quote">
+                <p>@Pointcut 어노테이션을 받는 메소드를 public으로 변경하면 다른 Aspect에서 Joinpoint를 바라볼 수 있다.</p>
+            </blockquote>
+
+
+
+            <ul>
+                <li>@Pointcut을 외부로 빼내어 관리가 가능하다.</li>
+                <li>우선 joinpoint만을 위한 클래스를 만들어 @Pointcut 어노테이션과 필터를 적용한다.</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">// CommonPointcut
+        public class CommonPointcut {
+        @Pointcut(value = "execution(public * chap07..*(..))")
+        public void commonTarget() {
+        }
+        }</code></pre>
+
+
+
+            <ul>
+                <li>그다음 각 Aspect의 @Around 필드를 수정한다.</li>
+            </ul>
+
+
+
+            <pre class="wp-block-code"><code class="">// CacheAspect
+        @Around("CommonPointcut.commonTarget()")
+        public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
+        //..
+        
+        // ExecutiveTimeAspect
+        @Around("CommonPointcut.commonTarget()")
+        public Object measure(ProceedingJoinPoint joinPoint) throws Throwable {
+        //....</code></pre>
+
+
+
+            <ul>
+                <li>이렇게 하면 joinpoint를 효율적으로 관리할 수 있다.<br><img src=":/32b37da8e21746afb764cc178680f2c8"
+                        alt="941b87aa6f46c2683fb1442572a2ce93.png"></li>
+                <li>정말 좋네</li>
+            </ul>
+
+        </div>
+
     </div>
-</form>
-		</div>
-	</div>
-</nav>
 
 
+    <div class="footer">
 
-<div class="footer">
+    </div>
 
-</div>
+</body>
 
-	</body>
 </html>
-
