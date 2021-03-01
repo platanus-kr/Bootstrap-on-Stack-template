@@ -1,4 +1,4 @@
-/* body {
+/* .content {
   padding-top: 56px;
 } */
 
@@ -6,12 +6,12 @@
   top: 56px;
 }
 
-#body-row {
+/* #body-row {
   margin-left: 0;
   margin-right: 0;
-}
+} */
 #sidebar-container {
   min-height: 100vh;
-  background-color: #333;
-  padding: 0;
+  /* background-color: #333; */
+  margin-top:70px;
 }
